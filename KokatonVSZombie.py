@@ -119,6 +119,12 @@ def main():
             zombie.move(plants)
             zombie.draw(screen)
 
+        for zombie in zombies:
+            # 画面外にゾンビが出たら消す
+            if zombie.rect.x + GRID_SIZE < 0:
+                zombies.remove(zombie)
+
+
 
         # 画面の更新
         pg.display.update()
